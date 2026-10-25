@@ -19,13 +19,17 @@ jobs:
 
       - name: Compile project
         run: |
+          mkdir -p build
+          chmod -R a+rwX .
           docker run --rm \
+            --user "$(id -u):$(id -g)" \
             -v "$PWD:/workspace" \
             -w /workspace \
             relapse-builder \
             bash -lc "make all"
 
       - name: Upload build files
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: relapse-build
