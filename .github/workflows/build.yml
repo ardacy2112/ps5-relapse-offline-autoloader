@@ -17,16 +17,20 @@ jobs:
       - name: Build Docker image
         run: docker build -t relapse-builder .
 
+      
       - name: Compile project
         run: |
           mkdir -p build
           chmod -R a+rwX .
           docker run --rm \
-            --user "$(id -u):$(id -g)" \
+            -e HOME=/tmp \
+            -e DOTNET_CLI_HOME=/tmp/DOTNET_CLI_HOME \
+            -e XDG_DATA_HOME=/tmp \
             -v "$PWD:/workspace" \
             -w /workspace \
             relapse-builder \
             bash -lc "make all"
+            
 
       - name: Upload build files
         if: always()
