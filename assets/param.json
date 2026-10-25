@@ -1,0 +1,42 @@
+{
+  "addcont": {
+    "serviceIdForSharing": [
+      "                   ",
+      "                   ",
+      "                   ",
+      "                   ",
+      "                   ",
+      "                   ",
+      "                   "
+    ]
+  },
+  "ageLevel": {
+    "US": 0,
+    "default": 0
+  },
+  "applicationCategoryType": 65536,
+  "applicationDrmType": "free",
+  "attribute": 0,
+  "attribute2": 0,
+  "attribute3": 0,
+  "conceptId": "0",
+  "contentBadgeType": 2,
+  "contentId": "IV9999-RELA21121_00-RELAPSEARDACY211",
+  "contentVersion": "01.000.000",
+  "deeplinkUri": "https://ardacy2112.github.io/relapseardacy",
+  "localizedParameters": {
+    "defaultLanguage": "en-US",
+    "en-US": {
+      "titleName": "Relapse by ardacy2112"
+    }
+  },
+  "masterVersion": "01.00",
+  "pubtools": {
+    "creationDate": "2026-08-21 12:00:00",
+    "toolVersion": "1.21"
+  },
+  "requiredSystemSoftwareVersion": "0x0000000000000000",
+  "sdkVersion": "0x0000000000000000",
+  "titleId": "RELA21121",
+  "versionFileUri": "                                                                                                                                                                                                                                                               "
+}
