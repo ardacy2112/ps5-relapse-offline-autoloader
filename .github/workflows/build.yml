@@ -1,0 +1,36 @@
+
+name: Build Relapse PKG
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build Docker image
+        run: docker build -t relapse-builder .
+
+      - name: Compile project
+        run: |
+          docker run --rm \
+            -v "$PWD:/workspace" \
+            -w /workspace \
+            relapse-builder \
+            bash -lc "make all"
+
+      - name: Upload build files
+        uses: actions/upload-artifact@v4
+        with:
+          name: relapse-build
+          path: |
+            build/**
+            *.pkg
+          if-no-files-found: warn
+          
